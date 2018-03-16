@@ -1,6 +1,7 @@
 require 'maury/accounts'
 require 'maury/client'
 require 'maury/environments'
+require 'maury/provider_locations'
 require 'maury/servers'
 require 'maury/users'
 require "maury/version"
@@ -24,5 +25,9 @@ module Maury
 
   def self.servers
     Servers
+  end
+
+  def self.provider_locations
+    ProviderLocations
   end
 end
