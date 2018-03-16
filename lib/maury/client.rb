@@ -75,13 +75,15 @@ module Maury
 
     def connector
       @connector ||= Faraday.new(url: base_url) do |faraday|
-        {
-          'Content-Type' => 'application/json',
-          'Accept' => 'application/vnd.engineyard.v3+json',
-          'Host' => host,
-          'X-EY-TOKEN' => token,
-          'User-Agent' => 'maury/0.1.0 (https://github.com/ess/maury-ruby)'
-        }
+        faraday.headers.merge!(
+          {
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/vnd.engineyard.v3+json',
+            'Host' => host,
+            'X-EY-TOKEN' => token,
+            'User-Agent' => 'maury/0.1.0 (https://github.com/ess/maury-ruby)'
+          }
+        )
 
         faraday.request :url_encoded
         faraday.adapter Faraday.default_adapter
