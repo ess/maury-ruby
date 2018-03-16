@@ -1,6 +1,7 @@
 require 'maury/accounts'
 require 'maury/client'
 require 'maury/environments'
+require 'maury/servers'
 require 'maury/users'
 require "maury/version"
 
@@ -19,5 +20,9 @@ module Maury
 
   def self.environments
     Environments
+  end
+
+  def self.servers
+    Servers
   end
 end
