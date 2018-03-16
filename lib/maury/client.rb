@@ -6,8 +6,10 @@ require 'maury/core/result'
 
 module Maury
   class Client
-    def initialize(base_url: 'https://api.engineyard.com', token: nil)
-      @base_url = Addressable::URI.parse(base_url)
+    DEFAULT_BASE = 'https://api.engineyard.com'
+
+    def initialize(base_url: DEFAULT_BASE, token: nil)
+      @base_url = Addressable::URI.parse(base_url || DEFAULT_BASE)
       @token = token
     end
 
