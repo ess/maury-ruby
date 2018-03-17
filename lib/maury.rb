@@ -1,4 +1,5 @@
 require 'maury/accounts'
+require 'maury/addresses'
 require 'maury/client'
 require 'maury/environments'
 require 'maury/provider_locations'
@@ -13,6 +14,10 @@ module Maury
 
   def self.accounts
     Accounts
+  end
+
+  def self.addresses
+    Addresses
   end
 
   def self.users
